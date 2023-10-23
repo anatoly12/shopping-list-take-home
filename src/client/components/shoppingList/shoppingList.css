@@ -13,3 +13,7 @@
   letter-spacing: 0.25px;
   text-transform: uppercase;
 }
+
+.ant-layout {
+  height: 100%;
+}

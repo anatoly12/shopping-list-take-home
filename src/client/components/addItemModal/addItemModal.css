@@ -1,0 +1,94 @@
+.modal {
+  height: 768px;
+}
+
+.modal > .ant-modal-content {
+  height: 100%;
+  border-radius: 0px;
+  border: 3px solid #4d81b7;
+  border-bottom: 5px solid #4d81b7;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
+}
+
+.modal > .ant-modal-content > .ant-modal-footer {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.headingWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.heading {
+  color: var(--typography-primary-font, #2a323c);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.sub-heading {
+  color: var(--typography-secondary-font, #5c6269);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+
+.cancel-btn {
+  border: none;
+  box-shadow: none;
+}
+
+.action-btn {
+  border-radius: 4px;
+}
+
+.input {
+  margin-bottom: 16px;
+  padding: 14px 15px;
+  border-radius: 4px;
+}
+
+.description {
+  border-radius: 4px;
+  padding: 14px 15px;
+  margin-bottom: 14px;
+}
+.description textarea {
+  resize: none;
+  padding: 14px 15px;
+}
+.description > .ant-input-suffix > .ant-input-data-count {
+  bottom: 10px;
+  right: 10px;
+}
+
+.select {
+  width: 100% !important;
+  border-radius: 4px;
+  height: 52px;
+  margin-bottom: 30px;
+}
+
+.checkbox > .ant-checkbox > .ant-checkbox-inner {
+  border-radius: 2px;
+}
+.checkbox > span {
+  color: var(--Grey-3, #9ca8b4);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
