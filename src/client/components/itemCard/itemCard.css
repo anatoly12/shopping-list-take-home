@@ -1,0 +1,80 @@
+.item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
+  border: 1px solid #d5dfe9;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card-info-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 12px;
+}
+
+.item-name {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+.item-name-stroke {
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: line-through;
+  color: #4d81b7;
+}
+
+.item-description {
+  color: #7d7a7a;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 4px;
+}
+.item-description-stroke {
+  color: #7d7a7a;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 4px;
+  text-decoration: line-through;
+}
+
+.card-actions-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.checkbox > .ant-checkbox > .ant-checkbox-inner {
+  border-radius: 2px;
+}
+
+.pointer {
+  cursor: pointer;
+}

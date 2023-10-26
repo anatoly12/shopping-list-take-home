@@ -1,0 +1,19 @@
+.shopping-navbar {
+  background: #4d81b7;
+}
+
+.nav-title {
+  color: #fff;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Dosis;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.ant-layout {
+  height: 100%;
+}

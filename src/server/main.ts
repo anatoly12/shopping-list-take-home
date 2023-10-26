@@ -3,9 +3,9 @@ import ViteExpress from "vite-express";
 import appRouter from "./router";
 
 const app = express();
-const router = express.Router()
 
-router.use(appRouter)
+app.use(express.json());
+app.use(appRouter);
 
 app.get("/hello", (_, res) => {
   res.send("Hello Vite + React + TypeScript!");

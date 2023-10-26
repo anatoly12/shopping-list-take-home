@@ -1,10 +1,10 @@
 import "./App.css";
-import ShoppingList from "./components/shoppingList/shopppingList";
+import ShoppingLayout from "./components/shoppingLayout/shoppingLayout";
 
 function App() {
   return (
     <div className="App">
-     <ShoppingList />
+     <ShoppingLayout />
     </div>
   );
 }

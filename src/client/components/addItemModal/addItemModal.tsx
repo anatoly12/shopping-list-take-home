@@ -1,13 +1,7 @@
 import { Button, Checkbox, Input, Modal, Select, Typography } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import "./addItemModal.css";
-
-export type formValuesType = {
-  itemName: string;
-  description: string;
-  quantity: number | null;
-  purchased?: boolean;
-};
+import { formValuesType } from "../shoppingLayout/shoppingLayout";
 
 interface addItemModalProps {
   open: boolean;
@@ -22,6 +16,7 @@ interface addItemModalProps {
   subHeading?: string;
   actionButtonText?: string;
   selectRef: any;
+  fieldError: boolean;
 }
 
 const selectOptions = [
@@ -43,6 +38,7 @@ const AddItemModal = ({
   actionButtonText = "Add Task",
   selectRef,
   formValues,
+  fieldError,
 }: addItemModalProps) => {
   return (
     <Modal
@@ -69,7 +65,13 @@ const AddItemModal = ({
         <Typography.Text className="heading">{heading}</Typography.Text>
         <Typography.Text className="sub-heading">{subHeading}</Typography.Text>
       </div>
-      <Input placeholder="Item Name" className="input" onChange={onInputChange} value={formValues.itemName} />
+      <Input
+        placeholder="Item Name"
+        className="input"
+        onChange={onInputChange}
+        value={formValues.itemName}
+        status={fieldError && !formValues.itemName ? "error" : ""}
+      />
       <TextArea
         placeholder="Description"
         rows={6}
@@ -78,6 +80,7 @@ const AddItemModal = ({
         className="description"
         onChange={handleTextAreaChange}
         value={formValues.description}
+        status={fieldError && !formValues.description ? "error" : ""}
       />
       <Select
         style={{ width: 120 }}
@@ -87,6 +90,7 @@ const AddItemModal = ({
         className="select"
         ref={selectRef}
         value={formValues.quantity}
+        status={fieldError && !formValues.quantity ? "error" : ""}
       />
       {onCheckboxChange && (
         <Checkbox onChange={onCheckboxChange} className="checkbox">

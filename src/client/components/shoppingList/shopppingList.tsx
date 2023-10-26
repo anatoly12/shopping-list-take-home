@@ -1,78 +1,25 @@
-import { Layout, Typography } from "antd";
+import { Button, Typography } from "antd";
 import "./shoppingList.css";
-import EmptyList from "../emptyList/emptyList";
-import AddItemModal, { formValuesType } from "../addItemModal/addItemModal";
-import { useEffect, useRef, useState } from "react";
+import ItemCard from "../itemCard/itemCard";
+import { formValuesType } from "../shoppingLayout/shoppingLayout";
 
-const initialFormValues = {
-  itemName: "",
-  description: "",
-  quantity: null,
-  purchased: false,
-};
-const ShoppingList = () => {
-  const [openAddModal, setOpenAddModal] = useState(false);
-  const [formValues, setFormValues] =
-    useState<formValuesType>(initialFormValues);
-  const selectRef = useRef();
-  const { Header } = Layout;
+interface ShoppingListProps {
+  listData: formValuesType[];
+}
 
-  useEffect(() => {
-    console.log("formValues ", formValues);
-  }, [formValues]);
-
-  const handleAddTask = () => {
-    // setOpenAddModal(false);
-    // fetch("/add-item", {
-    //   method: "POST",
-    //   body: JSON.stringify(formValues)
-    // })
-  };
-
-  const handleCancel = () => {
-    setOpenAddModal(false);
-    setFormValues(initialFormValues);
-  };
-
-  const openModal = () => {
-    setOpenAddModal(true);
-  };
-
-  const handleSelectChange = (val: number) => {
-    const values = { ...formValues };
-    values.quantity = val;
-    setFormValues(values);
-  };
-
-  const handleInputChange = (e: any) => {
-    const values = { ...formValues };
-    values.itemName = e.target.value;
-    setFormValues(values);
-  };
-
-  const handleTextAreaChange = (e: any) => {
-    const values = { ...formValues };
-    values.description = e.target.value;
-    setFormValues(values);
-  };
-
+const ShoppingList = ({ listData }: ShoppingListProps) => {
   return (
-    <Layout>
-      <Header className="shopping-navbar">
-        <Typography.Text className="nav-title">Shopping List</Typography.Text>
-      </Header>
-      <EmptyList openModal={openModal} />
-      <AddItemModal
-        open={openAddModal}
-        onAddTask={handleAddTask}
-        onCancel={handleCancel}
-        onInputChange={handleInputChange}
-        handleTextAreaChange={handleTextAreaChange}
-        onSelectChange={handleSelectChange}
-        formValues={formValues}
-        selectRef={selectRef}
-      />
-    </Layout>
+    <div className="shopping-list-container">
+      <div className="list-heading-wrapper">
+        <Typography.Text className="list-heading">Your Items</Typography.Text>
+        <Button type="primary" className="add-item-btn">
+          Add Item
+        </Button>
+      </div>
+      {listData.map((item) => (
+        <ItemCard key={item._id} item={item}/>
+      ))}
+    </div>
   );
 };
 
