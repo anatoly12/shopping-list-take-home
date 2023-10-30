@@ -1,0 +1,36 @@
+.delete-modal {
+  height: 240px;
+}
+
+.delete-modal > .ant-modal-content {
+  height: 100%;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.50);
+}
+
+.delete-modal > .ant-modal-content > .ant-modal-footer {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.heading {
+  color: #2a323c;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.sub-heading {
+  color: var(--typography-secondary-font, #5c6269);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Nunito;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}

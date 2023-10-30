@@ -1,20 +1,20 @@
 import { Button, Checkbox, Input, Modal, Select, Typography } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import "./addItemModal.css";
+import "./itemModal.css";
 import { formValuesType } from "../shoppingLayout/shoppingLayout";
 
-interface addItemModalProps {
+interface ItemModalProps {
   open: boolean;
-  onAddTask: () => void;
+  onActionClick: () => void;
   onCancel: () => void;
   onInputChange: (e: any) => void;
   handleTextAreaChange: (e: any) => void;
   onSelectChange: (val: number) => void;
   formValues: formValuesType;
-  onCheckboxChange?: () => void;
-  heading?: string;
-  subHeading?: string;
-  actionButtonText?: string;
+  onCheckboxChange?: (e: any) => void;
+  heading: string;
+  subHeading: string;
+  actionButtonText: string;
   selectRef: any;
   fieldError: boolean;
 }
@@ -23,28 +23,31 @@ const selectOptions = [
   { value: 1, label: 1 },
   { value: 2, label: 2 },
   { value: 3, label: 3 },
+  { value: 4, label: 4 },
+  { value: 5, label: 5 },
+  { value: 6, label: 6 },
 ];
 
-const AddItemModal = ({
+const ItemModal = ({
   open,
-  onAddTask,
+  onActionClick,
   onCancel,
   onInputChange,
   handleTextAreaChange,
   onSelectChange,
   onCheckboxChange,
-  heading = "Add an Item",
-  subHeading = "Add your new item below",
-  actionButtonText = "Add Task",
+  heading,
+  subHeading,
+  actionButtonText,
   selectRef,
   formValues,
   fieldError,
-}: addItemModalProps) => {
+}: ItemModalProps) => {
   return (
     <Modal
       open={open}
       title="SHOPPING LIST"
-      onOk={onAddTask}
+      onOk={onActionClick}
       onCancel={onCancel}
       className="modal"
       footer={[
@@ -55,7 +58,7 @@ const AddItemModal = ({
           key="action"
           type="primary"
           className="action-btn"
-          onClick={onAddTask}
+          onClick={onActionClick}
         >
           {actionButtonText}
         </Button>,
@@ -93,7 +96,11 @@ const AddItemModal = ({
         status={fieldError && !formValues.quantity ? "error" : ""}
       />
       {onCheckboxChange && (
-        <Checkbox onChange={onCheckboxChange} className="checkbox">
+        <Checkbox
+          onChange={onCheckboxChange}
+          className="checkbox"
+          checked={formValues.purchased}
+        >
           Purchased
         </Checkbox>
       )}
@@ -101,4 +108,4 @@ const AddItemModal = ({
   );
 };
 
-export default AddItemModal;
+export default ItemModal;
