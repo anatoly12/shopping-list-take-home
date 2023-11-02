@@ -1,5 +1,11 @@
 .modal {
   height: 768px;
+  @media screen and (max-width: 768px) {
+    height: 650px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 600px;
+  }
 }
 
 .modal > .ant-modal-content {

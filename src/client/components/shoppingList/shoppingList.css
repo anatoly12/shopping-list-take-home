@@ -2,6 +2,15 @@
   margin: 0;
   padding: 40px 91px 40px 164px;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    padding: 40px 60px;
+  }
+  @media screen and (max-width: 550px) {
+    padding: 40px;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 40px 20px;
+  }
 }
 
 .list-heading-wrapper {
@@ -23,5 +32,5 @@
 }
 
 .add-item-btn {
-    border-radius: 4px;
-  }
+  border-radius: 4px;
+}
