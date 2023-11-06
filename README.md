@@ -11,7 +11,16 @@ npm install
 yarn
 ```
 
-## start local server
+## Environment Variables
+
+Add environment variables:
+
+```
+add a .env file in project root directory 
+then add MONGO_DB_URI variable in it
+```
+
+## Start local server
 
 Run the development server:
 
